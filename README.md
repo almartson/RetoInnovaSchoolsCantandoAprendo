@@ -15,7 +15,7 @@ Reto de diseño y programación de un videojuego educativo en una semana (para l
 
 - Tienes 1 semana para trabajar en el reto.
 
-####- El 23 de enero a las 9am necesitamos que le envíes a aescardo@colegiosperuanos.edu.pe 1 solo link de
+#### - El 23 de enero a las 9am necesitamos que le envíes a aescardo@colegiosperuanos.edu.pe 1 solo link de
 github que contenga:
 
 ## - Tu proyecto en Unity
