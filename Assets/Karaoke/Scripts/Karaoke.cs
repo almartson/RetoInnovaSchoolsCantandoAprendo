@@ -3,10 +3,44 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections;
 
-namespace Hammerplay.Utils.Karaoke {
-	public class Karaoke : MonoBehaviour {
+namespace Hammerplay.Utils.Karaoke
+{
+	public class Karaoke : MonoBehaviour
+    {
 
-		[SerializeField]
+        /// <summary>
+        /// Frase que, al aparecer en la Trivia: Hará que salgan llas Imáges-Trivia, parte 1.
+        /// </summary>
+        const string _FRASE_1_TRIVIA_KARAOKE = "Los po";
+
+        /// <summary>
+        /// Bandera: Permite controlar si ya se consiguió la FRASE en las líneas del Karaoke.
+        /// </summary>
+        public bool _yaConsiguioFrase1 = false;
+
+        /// <summary>
+        /// Frase que, al aparecer en la Trivia: Hará que salgan llas Imáges-Trivia, parte 2.
+        /// </summary>
+        const string _FRASE_2_TRIVIA_KARAOKE = "La ga";
+
+        /// <summary>
+        /// Bandera: Permite controlar si ya se consiguió la FRASE en las líneas del Karaoke.
+        /// </summary>
+        public bool _yaConsiguioFrase2 = false;
+
+
+        /// <summary>
+        /// Frase que, al aparecer en la Trivia: Hará que salgan llas Imáges-Trivia, parte 3.
+        /// </summary>
+        const string _FRASE_3_TRIVIA_KARAOKE = "Bajo sus";
+
+        /// <summary>
+        /// Bandera: Permite controlar si ya se consiguió la FRASE en las líneas del Karaoke.
+        /// </summary>
+        public bool _yaConsiguioFrase3 = false;
+
+
+        [SerializeField]
 		private TextAsset subtitleFile;
 
 		[SerializeField]
@@ -18,20 +52,31 @@ namespace Hammerplay.Utils.Karaoke {
 		[SerializeField]
 		private string highlightEndTag = "</Color>";
 
-		private Text text;
+		public Text text;
 
 		private UnityEvent onComplete;
 
-		private void Awake() {
-			text = GetComponent<Text>();
+		private void Awake()
+        {			
 
-			if (text == null) {
-				Debug.LogError("Can't find Text component in Gameobject, Karaoke needs Text Component");
-				this.enabled = false;
-			}
+			if (text == null)
+            {
+
+                this.text = GetComponent<Text>();
+
+                if (text == null)
+                {
+                    // No solution, display error:
+                    //
+                    Debug.LogError("Can't find Text component in Gameobject, Karaoke needs Text Component");
+                    this.enabled = false;
+                }                
+
+			}//End if
 		}
 
-		private void Start() {
+		private void Start()
+        {
 			if (playOnAwake)
 				StartSubtitle();
 		}
@@ -39,7 +84,8 @@ namespace Hammerplay.Utils.Karaoke {
 		/// <summary>
 		/// Starts the karaoke subtitles.
 		/// </summary>
-		public void StartSubtitle() {
+		public void StartSubtitle()
+        {
 			StartSubtitle(null);
 		}
 
@@ -47,8 +93,10 @@ namespace Hammerplay.Utils.Karaoke {
 		/// Starts the karaoke subtitles.
 		/// </summary>
 		/// <param name="onComplete"></param>
-		public void StartSubtitle(UnityEvent onComplete) {
-			if (subtitleFile == null) {
+		public void StartSubtitle(UnityEvent onComplete)
+        {
+			if (subtitleFile == null)
+            {
 				Debug.LogError("Need subtitle file, use a SSA/ASS file in .txt format");
 				return;
 			}
@@ -57,23 +105,53 @@ namespace Hammerplay.Utils.Karaoke {
 			this.onComplete = onComplete;
 		}
 
-		private IEnumerator Begin() {
+		private IEnumerator Begin()
+        {
 			var parser = new ASSParser(subtitleFile);
 			var startTime = Time.time;
 
-			while (true) {
+			while (true)
+            {
 				var elasped = Time.time - startTime;
 
 				int substringIndex = 0;
 				var subtitle = parser.GetForTime(elasped, out substringIndex);
 
-				if (subtitle != null) {
+				if (subtitle != null)
+                {
 					string modifiedString = subtitle.Text;
-					modifiedString = modifiedString.Insert(substringIndex, highlightEndTag);
-					modifiedString = modifiedString.Insert(0, highlightStartTag);
+
+                    // This part adds the Highlight to the Karaoke Lyrics:
+                    // End (</Color>) Tag:
+                    //
+                    modifiedString = modifiedString.Insert(substringIndex, highlightEndTag);
+                    //
+                    // Add the Start Color TAG = <Color=Red>
+                    //
+                    modifiedString = modifiedString.Insert(0, highlightStartTag);
+                    //
+                    // Add the Complete String to the UI-Text Component (we could use a TextMeshPro UI-Text here):
+                    //
 					text.text = modifiedString;
-				}
-				else {
+                    //
+                    // AlMartson (i.e.: Alejandro Almarza): I will add my two cents here:
+                    // CHECK whether we are passing throught the Start of An Animated-Important Phrase:
+                    //
+                    //int index = -1;
+                    //index = modifiedString.IndexOf(@_FRASE_2_TRIVIA_KARAOKE /*@_FRASE_1_TRIVIA_KARAOKE*/ );
+                    ////
+                    //if (index >= 0)       // int index = str.IndexOf(@"\");
+                    //{
+                    //    Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
+
+                    //}//End if
+
+
+                    BuscarFraseParaTrivia(modifiedString);
+
+                }
+				else    // We are done. End of Song / Video.
+                {
 
 					if (onComplete != null)
 						onComplete.Invoke();
@@ -82,7 +160,74 @@ namespace Hammerplay.Utils.Karaoke {
 				}
 
 				yield return null;
-			}
-		}
-	}
+			}//ENd while
+		}//End Method
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lineaDeTextoKaraoke"></param>
+        public void BuscarFraseParaTrivia(string lineaDeTextoKaraoke)
+        {
+
+            if ( (!_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3) )
+            {
+
+                // Buscar FRASE 1:
+                //
+                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_1_TRIVIA_KARAOKE) > 0)
+                {
+
+                    Debug.LogWarning(_FRASE_1_TRIVIA_KARAOKE);
+                    //
+                    // Setea la bandera de ENCONTRADO
+                    //
+                    this._yaConsiguioFrase1 = true;
+
+                }//End if (
+
+            }//End if ( (!_yaConsiguioFrase1...
+            else if ((_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
+            {
+
+                // Buscar FRASE 2:
+                //
+                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_2_TRIVIA_KARAOKE) > 0)
+                {
+
+                    Debug.LogWarning(_FRASE_2_TRIVIA_KARAOKE);
+                    //
+                    // Setea la bandera de ENCONTRADO
+                    //
+                    this._yaConsiguioFrase2 = true;
+
+                }//End if (
+
+            }//End if ( (!_yaConsiguioFrase1...
+            //
+            else if ((_yaConsiguioFrase1) && (_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
+            {
+
+                // Buscar FRASE 2:
+                //
+                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_3_TRIVIA_KARAOKE) > 0)
+                {
+
+                    Debug.LogWarning(_FRASE_3_TRIVIA_KARAOKE);
+                    //
+                    // Setea la bandera de ENCONTRADO
+                    //
+                    this._yaConsiguioFrase3 = true;
+
+                }//End if (
+
+            }//End if ( (!_yaConsiguioFrase1...
+
+        }//End Method
+
+
+
+    }
 }
