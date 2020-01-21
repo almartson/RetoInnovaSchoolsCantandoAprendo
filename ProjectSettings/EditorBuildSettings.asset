@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/SceneAndroidControlTest.unity
-    guid: 3f7ca2eca3fd7a940a235c9710f0aea2
+    path: Assets/_Scenes/Scene1.unity
+    guid: a1d9a11773a15d84d8957817cff5f77e
   m_configObjects: {}
