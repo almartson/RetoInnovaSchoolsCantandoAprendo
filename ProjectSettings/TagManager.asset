@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trivia1GUIGameObject
+  - Trivia2GUIGameObject
+  - Trivia3GUIGameObject
   layers:
   - Default
   - TransparentFX

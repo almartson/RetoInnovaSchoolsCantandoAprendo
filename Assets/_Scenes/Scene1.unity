@@ -963,7 +963,7 @@ GameObject:
   - component: {fileID: 472867611}
   m_Layer: 5
   m_Name: GUI_BotonesPreguntasRespuestas2
-  m_TagString: Untagged
+  m_TagString: Trivia2GUIGameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 672826872}
   m_Layer: 5
   m_Name: GUI_BotonesPreguntasRespuestas3
-  m_TagString: Untagged
+  m_TagString: Trivia3GUIGameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1725,7 +1725,7 @@ GameObject:
   - component: {fileID: 831183434}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1802,6 +1802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9748471c4c0e4d54fb92a424cc241569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _miParteDeLaCancionActual: -1
+  _estaPendienteUnCambioDeFraseOTrivia: 0
+  _yaConsiguioFrase1: 0
+  _yaConsiguioFrase2: 0
+  _yaConsiguioFrase3: 0
   subtitleFile: {fileID: 4900000, guid: a5f23b0e1784ffb4e96786deb5157aa2, type: 3}
   playOnAwake: 1
   highlightStartTag: <Color=Red>
@@ -1819,6 +1824,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f515a879347a7f4aaeabed0316b736c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainGameState: 0
+  _gameStateWhenPlaying: 0
+  _miDificultadDelJuegoElegida: 0
+  _miResultadoDelJuegoGaneOPerdi: 0
+  _miCalidadDeResolucionPantalla: 80
+  _miCalidadDeQualitySettings: 2
+  _miVideoPlayer: {fileID: 831183433}
+  _miScriptKaraokeGameObjectPlayer: {fileID: 831183434}
+  _scorePuntosOroP1: 0
+  _miGUITrivia1GUIComponenteCanvasEnGameObjectCanvas: {fileID: 7716129039240739226}
+  _miGUITrivia2GUIComponenteCanvasEnGameObjectCanvas: {fileID: 472867614}
+  _miGUITrivia3GUIComponenteCanvasEnGameObjectCanvas: {fileID: 672826875}
+  _miCamaraRealDeLaApp: {fileID: 519420031}
+  _miMemoriaHeapGarbageActual: 0
+  _puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance: 0
+  _miTiempoParaInvocarGCCollect: 0
+  _verDebugLogsWarningsErrors: 1
 --- !u!1 &928754998
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,7 +2389,7 @@ GameObject:
   - component: {fileID: 7609849843282859990}
   m_Layer: 5
   m_Name: GUI_BotonesPreguntasRespuestas1
-  m_TagString: Untagged
+  m_TagString: Trivia1GUIGameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2888,7 +2910,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7496537393331136322}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

@@ -9,6 +9,18 @@ namespace Hammerplay.Utils.Karaoke
     {
 
         /// <summary>
+        /// Frase Actual de la Canción del Karaoke: Va de 0 (primera) a 2 (Tercera) a 'n-1'.
+        /// </summary>
+        [HideInInspector]
+        public int _miParteDeLaCancionActual = -1;
+
+        /// <summary>
+        /// Bandera: Permite saber si acaba de CAMBIAR DE FRASE, y no se ha encendido la pregunta de Trivia a'un.del Karaoke.
+        /// </summary>
+        public bool _estaPendienteUnCambioDeFraseOTrivia = false;
+
+
+        /// <summary>
         /// Frase que, al aparecer en la Trivia: Hará que salgan llas Imáges-Trivia, parte 1.
         /// </summary>
         const string _FRASE_1_TRIVIA_KARAOKE = "Los po";
@@ -172,61 +184,89 @@ namespace Hammerplay.Utils.Karaoke
         public void BuscarFraseParaTrivia(string lineaDeTextoKaraoke)
         {
 
-            if ( (!_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3) )
+            if (! this._estaPendienteUnCambioDeFraseOTrivia)
             {
 
-                // Buscar FRASE 1:
-                //
-                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_1_TRIVIA_KARAOKE) > 0)
+                if ((!_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
                 {
 
-                    Debug.LogWarning(_FRASE_1_TRIVIA_KARAOKE);
+                    // Buscar FRASE 1:
                     //
-                    // Setea la bandera de ENCONTRADO
-                    //
-                    this._yaConsiguioFrase1 = true;
+                    if (lineaDeTextoKaraoke.IndexOf(@_FRASE_1_TRIVIA_KARAOKE) > 0)
+                    {
 
-                }//End if (
+                        Debug.LogWarning(_FRASE_1_TRIVIA_KARAOKE);
+                        //
+                        // Setea la bandera de ENCONTRADO
+                        //
+                        this._yaConsiguioFrase1 = true;
+                        //
+                        // Marcar Inicio de FASE 1 FRASE 1 de Trivia:
+                        //
+                        this._miParteDeLaCancionActual = 0;
+                        //
+                        // Pendiente un Cambio de FRASE
+                        //
+                        this._estaPendienteUnCambioDeFraseOTrivia = true;
 
-            }//End if ( (!_yaConsiguioFrase1...
-            else if ((_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
-            {
+                    }//End if (
 
-                // Buscar FRASE 2:
-                //
-                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_2_TRIVIA_KARAOKE) > 0)
+                }//End if ( (!_yaConsiguioFrase1...
+                else if ((_yaConsiguioFrase1) && (!_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
                 {
 
-                    Debug.LogWarning(_FRASE_2_TRIVIA_KARAOKE);
+                    // Buscar FRASE 2:
                     //
-                    // Setea la bandera de ENCONTRADO
-                    //
-                    this._yaConsiguioFrase2 = true;
+                    if (lineaDeTextoKaraoke.IndexOf(@_FRASE_2_TRIVIA_KARAOKE) > 0)
+                    {
 
-                }//End if (
+                        Debug.LogWarning(_FRASE_2_TRIVIA_KARAOKE);
+                        //
+                        // Setea la bandera de ENCONTRADO
+                        //
+                        this._yaConsiguioFrase2 = true;
+                        //
+                        // Marcar Inicio de FASE 2 FRASE 2 de Trivia:
+                        //
+                        this._miParteDeLaCancionActual = 1;
+                        //
+                        // Pendiente un Cambio de FRASE
+                        //
+                        this._estaPendienteUnCambioDeFraseOTrivia = true;
 
-            }//End if ( (!_yaConsiguioFrase1...
-            //
-            else if ((_yaConsiguioFrase1) && (_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
-            {
+                    }//End if (
 
-                // Buscar FRASE 2:
+                }//End if ( (!_yaConsiguioFrase1...
                 //
-                if (lineaDeTextoKaraoke.IndexOf(@_FRASE_3_TRIVIA_KARAOKE) > 0)
+                else if ((_yaConsiguioFrase1) && (_yaConsiguioFrase2) && (!_yaConsiguioFrase3))
                 {
 
-                    Debug.LogWarning(_FRASE_3_TRIVIA_KARAOKE);
+                    // Buscar FRASE 2:
                     //
-                    // Setea la bandera de ENCONTRADO
-                    //
-                    this._yaConsiguioFrase3 = true;
+                    if (lineaDeTextoKaraoke.IndexOf(@_FRASE_3_TRIVIA_KARAOKE) > 0)
+                    {
 
-                }//End if (
+                        Debug.LogWarning(_FRASE_3_TRIVIA_KARAOKE);
+                        //
+                        // Setea la bandera de ENCONTRADO
+                        //
+                        this._yaConsiguioFrase3 = true;
+                        //
+                        // Marcar Inicio de FASE 3 FRASE 3 de Trivia:
+                        //
+                        this._miParteDeLaCancionActual = 2;
+                        //
+                        // Pendiente un Cambio de FRASE
+                        //
+                        this._estaPendienteUnCambioDeFraseOTrivia = true;
 
-            }//End if ( (!_yaConsiguioFrase1...
+                    }//End if (
+
+                }//End if ( (!_yaConsiguioFrase1...
+
+            }//End if
 
         }//End Method
-
 
 
     }
