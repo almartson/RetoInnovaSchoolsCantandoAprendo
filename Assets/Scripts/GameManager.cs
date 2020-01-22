@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 //using System.Collections;
@@ -304,6 +305,16 @@ public class GameManager : MonoBehaviour
     #region Musica
     #endregion Musica
     #region Sonidos
+
+    // AUDIO VOICE-OVER:
+    //
+    /// <summary>
+    /// Audio de VOICE-over que explica como jugar. Ejecutar antes de iniciar todo.
+    /// </summary>
+    [Tooltip("Audio de VOICE-over que explica como jugar.")]
+    public AudioClip _miSonidoDeExplicacionComoJugar;
+
+
     //SFX:
 
     /// <summary>
@@ -998,9 +1009,11 @@ public class GameManager : MonoBehaviour
 
                             // Iniciar (O INICIALIZAR) cualquier otro Proceso necesario para INICIAR el Juego:
                             //
-                            //..?
-                            // Imagenes invisibles, etc.
-
+                            // Iniciar el Audio que explica 'como jugar?':
+                            //
+                            // 1-   Sonido:  Audio que explica 'como jugar?':
+                            //
+                            this._miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas.PlayOneShot( this._miSonidoDeExplicacionComoJugar );
 
                         }//End if
                         

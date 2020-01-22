@@ -273,6 +273,10 @@ public class AccionDeResponderATrivias : MonoBehaviour
                 //
                 Debug.Log("Pregunta 1, Resp. 1: Respuesta equivocada");
 
+                // Accion desde el GameManager
+                //
+                GameManager.gm.ResponderConFalloAPreguntaTrivia();
+
                 break;
 
 
@@ -282,12 +286,14 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // 1-   Apagar / Esconder el Botón (para que no lo puedan presionar más).
                 //
+
+
+                // 2-   Ejecutar Acción adecuada:
+                //
                 // Accion desde el GameManager
                 //
                 GameManager.gm.ResponderConAciertoAPreguntaTrivia();
 
-                // 2-   Ejecutar Acción adecuada:
-                //
 
                 // Respuesta
                 //
@@ -301,6 +307,11 @@ public class AccionDeResponderATrivias : MonoBehaviour
                 // Respuesta equivocada
                 //
                 Debug.Log("Pregunta 1, Resp. 3: Respuesta equivocada");
+
+                // Accion desde el GameManager
+                //
+                GameManager.gm.ResponderConFalloAPreguntaTrivia();
+
 
                 break;
 
