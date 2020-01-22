@@ -1099,7 +1099,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c972aed5cb1c2144f998adb4befafe39, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6fb81b27241c4754caf6d0608fa360c2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1820,6 +1820,7 @@ GameObject:
   - component: {fileID: 831183432}
   - component: {fileID: 831183433}
   - component: {fileID: 831183434}
+  - component: {fileID: 831183436}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1877,7 +1878,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 0.5
+  - 0.33
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -1937,21 +1938,40 @@ MonoBehaviour:
   _miGUITrivia3GUIComponenteCanvasEnGameObjectCanvas: {fileID: 672826875}
   _miGameObjectFuegosArtificiales: {fileID: 1681476280}
   _miCamaraRealDeLaApp: {fileID: 519420031}
-  _miSonidoDeExplicacionComoJugar: {fileID: 8300000, guid: 7ea925443b956c34c9a6d56cde97b310,
+  _miSonidoDeExplicacionComoJugar: {fileID: 8300000, guid: 79fc423461b219c4c9a75bc58baf8177,
     type: 3}
   _miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas: {fileID: 0}
   _miListaDeSonidosDeAnimacionesAciertos:
-  - {fileID: 8300000, guid: c972aed5cb1c2144f998adb4befafe39, type: 3}
-  - {fileID: 8300000, guid: e767d1080c01f6b49961be1949c7e44a, type: 3}
+  - {fileID: 8300000, guid: 469f0b4c43b597e40a2a58e391ed6842, type: 3}
+  - {fileID: 8300000, guid: 6fb81b27241c4754caf6d0608fa360c2, type: 3}
+  - {fileID: 8300000, guid: 515539a88cefba5439fa73bc5067a924, type: 3}
   _miLongitudListaDeSonidosDeAnimacionesAciertos: 0
   _miListaDeSonidosDeAnimacionesFallos:
-  - {fileID: 8300000, guid: f076f6795243c7248a98b8b1c8f5c013, type: 3}
-  - {fileID: 8300000, guid: 7ea925443b956c34c9a6d56cde97b310, type: 3}
+  - {fileID: 8300000, guid: 59eff9e8b82836a4db82e604dbc0a7d7, type: 3}
+  - {fileID: 8300000, guid: 17734c8e0a321ac42b1ed4ce85a6c2fd, type: 3}
   _miLongitudListaDeSonidosDeAnimacionesFallos: 0
   _miMemoriaHeapGarbageActual: 0
   _puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance: 0
   _miTiempoParaInvocarGCCollect: 0
   _verDebugLogsWarningsErrors: 1
+--- !u!114 &831183436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831183430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590cc8d912b6df34498813a1591cc048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleKey: 96
+  openOnStart: 0
+  shakeToOpen: 1
+  shakeAcceleration: 3
+  restrictLogCount: 0
+  maxLogCount: 1000
 --- !u!1 &928754998
 GameObject:
   m_ObjectHideFlags: 0

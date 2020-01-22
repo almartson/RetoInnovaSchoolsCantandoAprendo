@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 //using System.Collections;
@@ -29,7 +28,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Estados del Juego particulares: durante el ""gameState"": PLAYING.
     /// </summary>
-    public enum _GAME_STATES_WHEN_PLAYING { InicializacionFinalVariables, AntesDeIniciarCancion, AntesDeIniciarCantoDeLaCancion, DuranteLaCancion, FinalizadaLaCancion /*AnimacionInicioSuddenDeath */ };
+    public enum _GAME_STATES_WHEN_PLAYING { InicializacionFinalVariables, AntesDeIniciarCancion, AntesDeIniciarCantoDeLaCancion, DuranteLaCancion, FinalizadaLaLetraDeLaCancion, FinalizadaLaCancion /*AnimacionInicioSuddenDeath */ };
 
 
     /// <summary>
@@ -880,7 +879,7 @@ public class GameManager : MonoBehaviour
 
         //  DIFICULTAD
         //
-        this.InicializarDificultadDelJuego();
+        ///// No necesario en este demo: this.InicializarDificultadDelJuego();
 
         #endregion
 
@@ -1101,14 +1100,35 @@ public class GameManager : MonoBehaviour
                             //
                             this._miGameObjectFuegosArtificiales.SetActive(false);
 
+
+                            // Verificar si se acabó la canción (o al menos la parte subtitulada): EN ese caso: Permitir la Recolección de Basura.
+                            //
+                            if (this._miScriptKaraokeGameObjectPlayer._yaConsiguioFrase3)   // NOTA, OJO: EN ESTE DEMO se hizo hasta FRASE 3, expandir a FaseFinal la variable Booleana usada acá para verificar sin BUGS!
+                            {
+
+                                // Marcar el INICIO de la siguiente FASE:
+                                //
+                                this._gameStateWhenPlaying = _GAME_STATES_WHEN_PLAYING.FinalizadaLaLetraDeLaCancion;
+
+                            }//End if ( this._miScriptKaraokeGameObjectPlayer...
+
                         }//End if ( this._miScriptConteoDeTiempo...
 
+                        break;
 
-                        // Marcar el INICIO de la siguiente FASE:
+
+                    case _GAME_STATES_WHEN_PLAYING.FinalizadaLaLetraDeLaCancion:
+
+                        #region Configuracion del Juego
+
+                        // Garbage Collection: Aviso que en este ESTADO sí puedo Limpiar la GARBAGE:
                         //
-                        ///// this._gameStateWhenPlaying = _GAME_STATES_WHEN_PLAYING.PorChutar;
+                        this._puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance = true;
+
+                        #endregion Configuracion del Juego
 
                         break;
+
 
                     default:
 
@@ -1243,7 +1263,9 @@ public class GameManager : MonoBehaviour
             //
             if (this._puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance || (((_mainGameState == _GAME_STATES.Playing) && ((this._gameStateWhenPlaying ==
  _GAME_STATES_WHEN_PLAYING.InicializacionFinalVariables) || (this._gameStateWhenPlaying ==
- _GAME_STATES_WHEN_PLAYING.AntesDeIniciarCancion))) || (_mainGameState == _GAME_STATES.GameOver)))
+ _GAME_STATES_WHEN_PLAYING.AntesDeIniciarCancion) || (this._gameStateWhenPlaying ==
+ _GAME_STATES_WHEN_PLAYING.FinalizadaLaLetraDeLaCancion) || (this._gameStateWhenPlaying ==
+ _GAME_STATES_WHEN_PLAYING.FinalizadaLaCancion))) || (_mainGameState == _GAME_STATES.GameOver)))
             {
                 // Excelente Momento para LIMPIAR:
                 //
