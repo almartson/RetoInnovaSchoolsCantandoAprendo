@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_Sprites_1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b6c0f94c2aa5a1c48ab4bc376a1dc14e, type: 3}
+    - {fileID: 102900000, guid: 0cc7f6d83b840c747b50d58bd1436461, type: 3}
+    totalSpriteSurfaceArea: 1023936
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a49e05009b79b0e4183525395c9c2419, type: 3}
+  - {fileID: 21300000, guid: 500bc621ef40ce84ebb8754c5ed3bd78, type: 3}
+  - {fileID: 21300000, guid: ff0d20646b89dab45a4626d7547d92d8, type: 3}
+  - {fileID: 21300000, guid: a2d784c4b86f3fc4588b13e8f29e0097, type: 3}
+  - {fileID: 21300000, guid: 7a60fce5b5969e7478161078682f59b9, type: 3}
+  - {fileID: 21300000, guid: c6b36b9673739924d9110c3fc8be5fff, type: 3}
+  - {fileID: 21300000, guid: b5ec5d9622e6cca43855affa2694254b, type: 3}
+  - {fileID: 21300000, guid: 894d1a170e6db754dadb6cf6cda204b4, type: 3}
+  - {fileID: 21300000, guid: ae3d7d171405a0a4e9b6aa79654ed59f, type: 3}
+  - {fileID: 21300000, guid: e26ae377da57d3d41be60249ac581857, type: 3}
+  - {fileID: 21300000, guid: 12d680882b1411d438ba314a338d61b4, type: 3}
+  - {fileID: 21300000, guid: 3eb76fc88a766054cb0e0c3cf8481ffb, type: 3}
+  - {fileID: 21300000, guid: c3f839c921a141445bb467c705041609, type: 3}
+  - {fileID: 21300000, guid: 86f4c5d937b367f43a70ef39b7651cbb, type: 3}
+  - {fileID: 21300000, guid: 99a688d9a87b6f949b7d1082be2667a9, type: 3}
+  - {fileID: 21300000, guid: b6af65f9b2491744991c8eddf7b039e2, type: 3}
+  - {fileID: 21300000, guid: 72808a8b106636849addd0900b0bd6de, type: 3}
+  - {fileID: 21300000, guid: 243cc87c93927954dad29cfbe0b7347f, type: 3}
+  - {fileID: 21300000, guid: 3cc48fcc8d38d27409026b576f9035aa, type: 3}
+  - {fileID: 21300000, guid: ea39d6bd13d3d9844a6f9663c6273ff8, type: 3}
+  - {fileID: 21300000, guid: db3184af226e4324db1b5a82abd2768b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - FAv2_2
+  - FAv2_6
+  - FAv2_4
+  - 1_Si_Pollito_Pio_1
+  - FAv2_8
+  - FAv2_7
+  - 1_1_No_Assets_Tigre_2
+  - FAv2_3
+  - 1_2_No_Assets_Lobo_2
+  - 2_Si_Assets_Maiz_Trigo_2
+  - 3_No_Casi_mama_gallina
+  - 1_Si_Pollito_Pio_2
+  - 3_Si_Assets_Pollo_Duerme_2
+  - 1_3_No_Assets_Trivia_Bambi_1
+  - 2_No_item_comidita
+  - 2_No_Manzn_Verde
+  - z_Assets_Trivia_Conejito_1
+  - icon_pollo
+  - FAv2_1
+  - FAv2_5
+  - 2_No_item_sopita_512
+  m_Tag: Atlas_Sprites_1
+  m_IsVariant: 0
