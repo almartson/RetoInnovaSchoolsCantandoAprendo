@@ -275,6 +275,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     ///private static readonly int _PORTERO_IDLE_TRIGGER_PARAMETER_ANIMATION_STATE_HASH = Animator.StringToHash("triggerAnimacionPorteroIdle");
 
+
+    #region Fuegos Artificiales Ganador
+
+    /// <summary>
+    /// GameObject de FUEGOS ARTIFICIALES.
+    /// </summary>
+    [Tooltip("GameObject de FUEGOS ARTIFICIALES.")]
+    public GameObject _miGameObjectFuegosArtificiales;
+
+
+    #endregion Fuegos Artificiales Ganador
+
+
     #region Camara y Animaciones
 
     /// <summary>
@@ -292,6 +305,71 @@ public class GameManager : MonoBehaviour
     #endregion Musica
     #region Sonidos
     //SFX:
+
+    /// <summary>
+    /// CANAL y Fuente del Audio: Animaciones de ACIERTOS y FALLOS
+    /// </summary>
+    //[Tooltip("CANAL y Fuente del Audio: Animaciones de ACIERTOS y FALLOS")]
+    [HideInInspector]
+    public AudioSource _miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas;
+
+
+    // Aciertos:
+
+    /// <summary>
+    /// Lista de Sonidos Aciertos.
+    /// </summary>
+    [Tooltip("Lista de Sonidos Aciertos.")]
+    public AudioClip[] _miListaDeSonidosDeAnimacionesAciertos;
+
+    /// <summary>
+    /// Longitud de: Lista de Sonidos Aciertos.
+    /// </summary>
+    [Tooltip("Longitud de: Lista de Sonidos Aciertos.")]
+    public int _miLongitudListaDeSonidosDeAnimacionesAciertos = 0;
+
+
+    ///// <summary>
+    ///// Sonido de Animacion Acierto: 1 Muy Bien!
+    ///// </summary>
+    //[Tooltip("Sonido de Animacion Acierto: 1 Muy Bien!")]
+    //public AudioClip _miSonidoDeAnimacionAcierto1_MuyBien;
+
+    ///// <summary>
+    ///// Sonido de Animacion Acierto: 2 Siii!
+    ///// </summary>
+    //[Tooltip("Sonido de Animacion Acierto: 2 Siii!")]
+    //public AudioClip _miSonidoDeAnimacionAcierto2_Siii;
+
+
+    // Fallos:
+
+    /// <summary>
+    /// Lista de Sonidos Fallos.
+    /// </summary>
+    [Tooltip("Lista de Sonidos Fallos.")]
+    public AudioClip[] _miListaDeSonidosDeAnimacionesFallos;
+
+
+    /// <summary>
+    /// Longitud de: Lista de Sonidos Fallos.
+    /// </summary>
+    [Tooltip("Longitud de: Lista de Sonidos Fallos.")]
+    public int _miLongitudListaDeSonidosDeAnimacionesFallos = 0;
+
+    ///// <summary>
+    ///// Sonido de Animacion Fallo: 1 TrataOtraVez1!
+    ///// </summary>
+    //[Tooltip("Sonido de Animacion Fallo: 1 TrataOtraVez1!")]
+    //public AudioClip _miSonidoDeAnimacionFallo1_TrataOtraVez1;
+
+    ///// <summary>
+    ///// Sonido de Animacion Fallo: 2 VamosTuPuedes1!
+    ///// </summary>
+    //[Tooltip("Sonido de Animacion Fallo: 2 VamosTuPuedes1!")]
+    //public AudioClip _miSonidoDeAnimacionFallo2_VamosTuPuedes1;
+
+
     #endregion Sonidos
     #endregion Musica y Sonidos
 
@@ -445,6 +523,25 @@ public class GameManager : MonoBehaviour
             }//End if
 
         }//End if
+
+        // Fuegos Artificiales, celebracion:
+        //
+        if (this._miGameObjectFuegosArtificiales == null)
+        {
+
+            // Lanza el error. No Continuar:
+            //
+            Debug.LogError("El Componente '_miGameObjectFuegosArtificiales':\n*** Esta faltando (porque no fue agregado dentro del INSPECTOR en clase 'GameManager.cs') dentro de este GameObject.\n...Y NO PODEMOS ENCONTRARLO.\n....Se deberá detener la ejecución");
+
+        }//End if
+        else
+        {
+
+            // Disable:
+            //
+            this._miGameObjectFuegosArtificiales.SetActive( false );
+
+        }//End else
         //
         // Hero of the Game:
         //
@@ -571,6 +668,21 @@ public class GameManager : MonoBehaviour
 
 
         #region Sonidos y Musica
+
+        // Obtener 'AudiosSources' en el hijo de la Camara (ver 'MainCamera' en la Jerarquía del UNITY3D):
+        //
+        AudioSource[] miListaDeAudiosSources = this._miCamaraRealDeLaApp.GetComponentsInChildren<AudioSource>();
+
+        // Asignar c/'canal de audio' a su respectiva variable:
+        // 1- Aciertos / Fallos:
+        //
+        this._miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas = miListaDeAudiosSources[0];
+
+        // Calcular Longitud de array de Sonidos: Aciertos y Fallos:
+        //
+        this._miLongitudListaDeSonidosDeAnimacionesAciertos = this._miListaDeSonidosDeAnimacionesAciertos.Length;
+        this._miLongitudListaDeSonidosDeAnimacionesFallos = this._miListaDeSonidosDeAnimacionesFallos.Length;
+
         #endregion Sonidos y Musica
 
 
@@ -948,6 +1060,10 @@ public class GameManager : MonoBehaviour
                                 //
                                 this._miListaDeGUITriviasGUIComponenteCanvasEnGameObjectCanvas[this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual - 1].enabled = false;
 
+                                // Disable:
+                                //
+                                this._miGameObjectFuegosArtificiales.SetActive(false);
+
                             }//End if ( this._miScriptKaraokeGameObjectPlayer...
 
 
@@ -967,6 +1083,10 @@ public class GameManager : MonoBehaviour
                             // Deshabilitar visibilidad:
                             //
                             this._miListaDeGUITriviasGUIComponenteCanvasEnGameObjectCanvas[ this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual ].enabled = false;
+
+                            // Disable:
+                            //
+                            this._miGameObjectFuegosArtificiales.SetActive(false);
 
                         }//End if ( this._miScriptConteoDeTiempo...
 
@@ -1208,7 +1328,9 @@ public class GameManager : MonoBehaviour
     #region Play Sound    
     #region Sonidos de Animaciones
 
-    
+    ///
+    /// Accion que ocurrirá cuando el jugador elija una Respuesta CORRECTA
+    ///
     public void ResponderConAciertoAPreguntaTrivia()
     {
         // 1-   Sonido
@@ -1216,21 +1338,63 @@ public class GameManager : MonoBehaviour
         // 3-   +Score
         /////////////////
         //
-        // 1-   Sonido
+        // 1-   Sonido:  Acierto.
         //
-
+        this._miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas.PlayOneShot( this._miListaDeSonidosDeAnimacionesAciertos[Random.Range(0, this._miLongitudListaDeSonidosDeAnimacionesAciertos) ] );
 
         // 2-   Animacion
+        //
+        // Enable:
+        //
+        this._miGameObjectFuegosArtificiales.SetActive(true);
+
+
         // 3-   +Score
+        //
+        this._scorePuntosOroP1++;
+
+        //zz- Apagar las Imagenes de Trivia
+        //
+        // Apagar o esconder el POP-UP anterior, si lo hay
+        //
+        if (this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual >= 0)
+        {
+
+            // Deshabilitar visibilidad:
+            //
+            this._miListaDeGUITriviasGUIComponenteCanvasEnGameObjectCanvas[ this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual ].enabled = false;
+
+        }//End if ( this._miScriptKaraokeGameObjectPlayer...
 
     }//End Metdodo
 
+
+    ///
+    /// Accion que ocurrirá cuando el jugador elija una Respuesta INCORRECTA.
+    ///
     public void ResponderConFalloAPreguntaTrivia()
     {
 
         // 1-   Sonido
         // 2-   Animacion
         // 3-   NO: +Score
+
+        /////////////////
+        //
+        // 1-   Sonido:  Fallo.
+        //
+        this._miAudioSourceSonidoDeAciertosYFracasosTriviaPreguntas.PlayOneShot(this._miListaDeSonidosDeAnimacionesFallos[Random.Range(0, this._miLongitudListaDeSonidosDeAnimacionesFallos)]);
+
+        // 2-   Animacion
+        //
+        // Enable:
+        //
+        ///// No, ninguna: this._miGameObjectFuegosArtificiales.SetActive(true);
+
+
+        // 3-   +Score
+        //
+        /////No, no aumentar ni disminuir: this._scorePuntosOroP1++;
 
     }//End Metdodo
 

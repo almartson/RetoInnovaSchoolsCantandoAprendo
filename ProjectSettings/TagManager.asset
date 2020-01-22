@@ -7,6 +7,7 @@ TagManager:
   - Trivia1GUIGameObject
   - Trivia2GUIGameObject
   - Trivia3GUIGameObject
+  - FuegosArtificiales
   layers:
   - Default
   - TransparentFX
