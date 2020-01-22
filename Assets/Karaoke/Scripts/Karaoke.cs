@@ -9,6 +9,11 @@ namespace Hammerplay.Utils.Karaoke
     {
 
         /// <summary>
+        /// Karaoke Line, so far.
+        /// </summary>
+        public string _myFinalString = "";
+
+        /// <summary>
         /// Frase Actual de la Canción del Karaoke: Va de 0 (primera) a 2 (Tercera) a 'n-1'.
         /// </summary>
         [HideInInspector]
@@ -80,8 +85,9 @@ namespace Hammerplay.Utils.Karaoke
                 {
                     // No solution, display error:
                     //
-                    Debug.LogError("Can't find Text component in Gameobject, Karaoke needs Text Component");
-                    this.enabled = false;
+                    Debug.LogWarning("Can't find Text component in Gameobject, Karaoke needs Text Component.\nIt will use 'Mode Without Text Display (just internal string variable write)'");
+
+                    // Original Code: this.enabled = false;
                 }                
 
 			}//End if
@@ -113,7 +119,20 @@ namespace Hammerplay.Utils.Karaoke
 				return;
 			}
 
-			StartCoroutine(Begin());
+            if (text != null)
+            {
+                // Original code: With Display on GUI
+                //
+                StartCoroutine(Begin());
+            }
+            else
+            {
+                // No GUI DIsplay, but internal variable filling: 
+                //
+                StartCoroutine(BeginNoGUIMode());
+
+            }//End else
+			//
 			this.onComplete = onComplete;
 		}
 
@@ -131,20 +150,20 @@ namespace Hammerplay.Utils.Karaoke
 
 				if (subtitle != null)
                 {
-					string modifiedString = subtitle.Text;
+                    this._myFinalString = subtitle.Text;
 
                     // This part adds the Highlight to the Karaoke Lyrics:
                     // End (</Color>) Tag:
                     //
-                    modifiedString = modifiedString.Insert(substringIndex, highlightEndTag);
+                    this._myFinalString = this._myFinalString.Insert(substringIndex, highlightEndTag);
                     //
                     // Add the Start Color TAG = <Color=Red>
                     //
-                    modifiedString = modifiedString.Insert(0, highlightStartTag);
+                    this._myFinalString = this._myFinalString.Insert(0, highlightStartTag);
                     //
                     // Add the Complete String to the UI-Text Component (we could use a TextMeshPro UI-Text here):
                     //
-					text.text = modifiedString;
+					text.text = this._myFinalString;
                     //
                     // AlMartson (i.e.: Alejandro Almarza): I will add my two cents here:
                     // CHECK whether we are passing throught the Start of An Animated-Important Phrase:
@@ -159,7 +178,7 @@ namespace Hammerplay.Utils.Karaoke
                     //}//End if
 
 
-                    BuscarFraseParaTrivia(modifiedString);
+                    BuscarFraseParaTrivia(this._myFinalString);
 
                 }
 				else    // We are done. End of Song / Video.
@@ -176,9 +195,68 @@ namespace Hammerplay.Utils.Karaoke
 		}//End Method
 
 
+        private IEnumerator BeginNoGUIMode()
+        {
+            var parser = new ASSParser(subtitleFile);
+            var startTime = Time.time;
+
+            while (true)
+            {
+                var elasped = Time.time - startTime;
+
+                int substringIndex = 0;
+                var subtitle = parser.GetForTime(elasped, out substringIndex);
+
+                if (subtitle != null)
+                {
+                    this._myFinalString = subtitle.Text;
+
+                    // This part adds the Highlight to the Karaoke Lyrics:
+                    // End (</Color>) Tag:
+                    //
+                    _myFinalString = _myFinalString.Insert(substringIndex, highlightEndTag);
+                    //
+                    // Add the Start Color TAG = <Color=Red>
+                    //
+                    _myFinalString = _myFinalString.Insert(0, highlightStartTag);
+                    //
+                    // Add the Complete String to the UI-Text Component (we could use a TextMeshPro UI-Text here):
+                    //
+                    /// Original code: This IS THE LINE that makes the difference here:  text.text = _myFinalString;
+                    //
+                    // AlMartson (i.e.: Alejandro Almarza): I will add my two cents here:
+                    // CHECK whether we are passing throught the Start of An Animated-Important Phrase:
+                    //
+                    //int index = -1;
+                    //index = modifiedString.IndexOf(@_FRASE_2_TRIVIA_KARAOKE /*@_FRASE_1_TRIVIA_KARAOKE*/ );
+                    ////
+                    //if (index >= 0)       // int index = str.IndexOf(@"\");
+                    //{
+                    //    Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
+
+                    //}//End if
+
+
+                    BuscarFraseParaTrivia(_myFinalString);
+
+                }
+                else    // We are done. End of Song / Video.
+                {
+
+                    if (onComplete != null)
+                        onComplete.Invoke();
+
+                    yield break;
+                }
+
+                yield return null;
+            }//ENd while
+        }//End Method
+
+
 
         /// <summary>
-        /// 
+        /// Actualiza el Numero de FRASE actual, según parámetros dados al Inicio.
         /// </summary>
         /// <param name="lineaDeTextoKaraoke"></param>
         public void BuscarFraseParaTrivia(string lineaDeTextoKaraoke)

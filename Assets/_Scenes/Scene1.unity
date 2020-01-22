@@ -1802,6 +1802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9748471c4c0e4d54fb92a424cc241569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myFinalString: 
   _miParteDeLaCancionActual: -1
   _estaPendienteUnCambioDeFraseOTrivia: 0
   _yaConsiguioFrase1: 0
@@ -1811,7 +1812,7 @@ MonoBehaviour:
   playOnAwake: 1
   highlightStartTag: <Color=Red>
   highlightEndTag: </Color>
-  text: {fileID: 182326635}
+  text: {fileID: 0}
 --- !u!114 &831183435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1832,6 +1833,7 @@ MonoBehaviour:
   _miCalidadDeQualitySettings: 2
   _miVideoPlayer: {fileID: 831183433}
   _miScriptKaraokeGameObjectPlayer: {fileID: 831183434}
+  _miScriptConteoDeTiempo: {fileID: 0}
   _scorePuntosOroP1: 0
   _miGUITrivia1GUIComponenteCanvasEnGameObjectCanvas: {fileID: 7716129039240739226}
   _miGUITrivia2GUIComponenteCanvasEnGameObjectCanvas: {fileID: 472867614}
@@ -1858,7 +1860,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &928754999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,7 +1890,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928754998}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

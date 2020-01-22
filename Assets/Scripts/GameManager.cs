@@ -177,6 +177,43 @@ public class GameManager : MonoBehaviour
     #endregion Objetos del Juego
 
     #region Estados de Juego | Jugadores | Puntuaciones
+
+
+    #region CRONOMETRO, tiempo con cada TRIVIA:
+
+    /// <summary>
+    /// Tiempo máximo del Cronómetro a contar para dejar que el Jugado haga 'Toque' sobre las Imágenes.
+    /// </summary>
+    public const float _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_1 = 7.0f;
+
+    /// <summary>
+    /// Tiempo máximo del Cronómetro a contar para dejar que el Jugado haga 'Toque' sobre las Imágenes.
+    /// </summary>
+    public const float _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_2 = 7.0f;
+
+    /// <summary>
+    /// Tiempo máximo del Cronómetro a contar para dejar que el Jugado haga 'Toque' sobre las Imágenes.
+    /// </summary>
+    public const float _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_3 = 7.0f;
+
+    /// <summary>
+    /// Tiempo máximo del Cronómetro a contar para dejar que el Jugado haga 'Toque' sobre las Imágenes.
+    /// </summary>
+    public static readonly float[] _MIS_TIEMPOS_MAXIMO_CRONOMETRO_TODAS_LAS_TRIVIAS = { _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_1, _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_2, _MI_TIEMPO_MAXIMO_CRONOMETRO_TRIVIA_3 };
+    
+
+    /// <summary>
+    /// Script de TIMER o CRONOMETRO, para contar el Tiempo de la Frase/TRIVIA actualmente en Pantalla.
+    /// </summary>
+    [Tooltip("Script de TIMER o CRONOMETRO, para contar el Tiempo de la Frase/TRIVIA actualmente en Pantalla.")]
+    [HideInInspector]
+    public ConteoDeTiempo _miScriptConteoDeTiempo;
+
+
+    #endregion CRONOMETRO, tiempo con cada TRIVIA:
+
+
+
     #region Puntuaciones de los Jugadores
 
     /// <summary>
@@ -408,6 +445,7 @@ public class GameManager : MonoBehaviour
             }//End if
 
         }//End if
+        //
         // Hero of the Game:
         //
         if (this._miScriptKaraokeGameObjectPlayer == null)
@@ -416,6 +454,17 @@ public class GameManager : MonoBehaviour
             // El Karaoke representa al "Player".
             //
             this._miScriptKaraokeGameObjectPlayer = this.gameObject.GetComponent<Karaoke>();
+
+        }//End if
+        //
+        // Timer o Cronometros de cada PREGUNTA en pantalla:
+        //
+        if (this._miScriptConteoDeTiempo == null)
+        {
+
+            // Agregar this._miScriptConteoDeTiempo
+            //
+            this._miScriptConteoDeTiempo = this.gameObject.AddComponent<ConteoDeTiempo>();
 
         }//End if
 
@@ -769,7 +818,7 @@ public class GameManager : MonoBehaviour
                         for (int i = 0; i < longRes; i++)
                         {
 
-                            //Debug.Log(i + " )-- " + Screen.resolutions[ i ].ToString() );
+                            Debug.Log(i + " )-- " + Screen.resolutions[ i ].ToString() );
 
                         }//End for
 
@@ -838,7 +887,8 @@ public class GameManager : MonoBehaviour
                             // Iniciar (O INICIALIZAR) cualquier otro Proceso necesario para INICIAR el Juego:
                             //
                             //..?
-                            //...Quiza REINICIALIZAR LOS TIMERSSSSSSS. CRONOMETROS: Y poner etodo esto en METODO APARTE.
+                            // Imagenes invisibles, etc.
+
 
                         }//End if
                         
@@ -883,6 +933,11 @@ public class GameManager : MonoBehaviour
                             // Pendiente un Cambio de Frase a una Nueva TRIVIA: ENCENDER POP-UP correspondiente:
                             //
                             this._miListaDeGUITriviasGUIComponenteCanvasEnGameObjectCanvas[ this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual ].enabled = true;
+                            //
+                            // Encender TIMER o CRONOMETRO:
+                            //                            
+                            this._miScriptConteoDeTiempo.IniciarConteo(true, _MIS_TIEMPOS_MAXIMO_CRONOMETRO_TODAS_LAS_TRIVIAS[this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual] );
+
 
                             // Apagar o esconder el POP-UP anterior, si lo hay
                             //
@@ -901,6 +956,19 @@ public class GameManager : MonoBehaviour
                             this._miScriptKaraokeGameObjectPlayer._estaPendienteUnCambioDeFraseOTrivia = false;
 
                         }//End if
+                        else
+                        //
+                        // Verificar si ya el TIMER O CRONÓMETRO se accabo para el caso de la FRASE ACTUAL:
+                        //
+                        if ( this._miScriptConteoDeTiempo._estadoConteoDelTiempo == ConteoDeTiempo._ESTADO_CRONOMETRO.ActivadoYaSeCumplioTiempo )
+                        {
+
+                            // Esconder las imágenes de la Trivia:
+                            // Deshabilitar visibilidad:
+                            //
+                            this._miListaDeGUITriviasGUIComponenteCanvasEnGameObjectCanvas[ this._miScriptKaraokeGameObjectPlayer._miParteDeLaCancionActual ].enabled = false;
+
+                        }//End if ( this._miScriptConteoDeTiempo...
 
 
                         // Marcar el INICIO de la siguiente FASE:
