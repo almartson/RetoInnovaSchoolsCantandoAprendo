@@ -1207,6 +1207,34 @@ public class GameManager : MonoBehaviour
 
     #region Play Sound    
     #region Sonidos de Animaciones
+
+    
+    public void ResponderConAciertoAPreguntaTrivia()
+    {
+        // 1-   Sonido
+        // 2-   Animacion
+        // 3-   +Score
+        /////////////////
+        //
+        // 1-   Sonido
+        //
+
+
+        // 2-   Animacion
+        // 3-   +Score
+
+    }//End Metdodo
+
+    public void ResponderConFalloAPreguntaTrivia()
+    {
+
+        // 1-   Sonido
+        // 2-   Animacion
+        // 3-   NO: +Score
+
+    }//End Metdodo
+
+
     #endregion Sonidos de Animaciones
     #endregion Play Sound
     #region Sonidos Corrutinas (Multiples)
