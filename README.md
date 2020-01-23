@@ -10,7 +10,7 @@ Reto de diseño y programación de un videojuego educativo en una semana (para l
 ## Resumen:
 
 CantandoAprendo es una app que le permitirá a los niños cantar en un Karaoke distintas canciones conocidas, a la vez que le permite conocer y repasar la lectura de cada una de las palabras de su letra.
-Durante ecada canción aparecerán dibujos alusivos a la frase actual, de manera que el joven deberá tocar la opción correcta para poder ganar puntos para así superar el reto del nivel.
+Durante la reproducción de cada canción aparecerán dibujos alusivos a la frase actual, de manera que el joven deberá tocar la opción correcta para poder ganar puntos para así superar el reto del nivel.
 
 
 # Explicar cada punto:
