@@ -5,8 +5,6 @@ Reto de diseño y programación de un videojuego educativo en una semana (para l
 ### Unity 2018.4.0f1 (64-bit)
 
 #### Por: Alejandro Almarza Martín (AlMartson).
-#### Video explicando el proceso y tu lógica de trabajo: 
-#### Video explicando cómo funciona el juego: 
 
 
 ## Resumen:
