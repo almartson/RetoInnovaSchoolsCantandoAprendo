@@ -35,7 +35,7 @@ Durante la reproducción de cada canción aparecerán dibujos alusivos a la fras
 
 - Tienes 1 semana para trabajar en el reto.
 
-#### - El 23 de enero a las 9am necesitamos que le envíes a aescardo@colegiosperuanos.edu.pe 1 solo link de
+#### - El 23 de enero a las 9am necesitamos que envíes 1 solo link de
 github que contenga:
 
 ## - Tu proyecto en Unity
