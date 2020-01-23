@@ -6,11 +6,11 @@ Reto de diseño y programación de un videojuego educativo en una semana (para l
 
 #### Por: Alejandro Almarza Martín (AlMartson).
 
-### * Enlace a: 1 video de máximo 2 minutos explicando el proceso y tu lógica de trabajo (es un enlace a DropBox y a Google Drive, donde se encuentra ubicado el Video).
+### * Enlace a: 1 video de máximo 2 minutos explicando el proceso y tu lógica de trabajo.
 ->
 https://drive.google.com/file/d/1UwKCsc4Xi-jSn9B86mkU8RUcD4FPs331/view?usp=sharing
 
-### * Enlace a: 1 video de máximo 1 minuto explicando cómo funciona el juego. (es un enlace a DropBox y a Google Drive, donde se encuentra ubicado el Video).
+### * Enlace a: 1 video de máximo 1 minuto explicando cómo funciona el juego.
 ->
 https://drive.google.com/file/d/1VxCcXsNFyMqMDoM4UeZHCXRyCBkGlant/view?usp=sharing
 
