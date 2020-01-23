@@ -2,13 +2,12 @@
 Reto de diseño y programación de un videojuego educativo en una semana (para la Empresa Innova Schools)
 
 ### Proyecto hecho con:
-## Unity 2018.4.0f1 (64-bit)
+### Unity 2018.4.0f1 (64-bit)
 
-#### Por: Alejandro Almarza Martín (alias: AlMartson).
+#### Por: Alejandro Almarza Martín (AlMartson).
 
-=============
 
-Resumen:
+## Resumen:
 
 CantandoAprendo es una app que le permitirá a los niños cantar en un Karaoke distintas canciones conocidas, a la vez que le permite conocer y repasar la lectura de cada una de las palabras de su letra.
 Durante ecada canción aparecerán dibujos alusivos a la frase actual, de manera que el joven deberá tocar la opción correcta para poder ganar puntos para así superar el reto del nivel.
