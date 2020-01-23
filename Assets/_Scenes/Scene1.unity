@@ -1952,7 +1952,7 @@ MonoBehaviour:
   _miMemoriaHeapGarbageActual: 0
   _puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance: 0
   _miTiempoParaInvocarGCCollect: 0
-  _verDebugLogsWarningsErrors: 1
+  _verDebugLogsWarningsErrors: 0
 --- !u!1 &928754998
 GameObject:
   m_ObjectHideFlags: 0
