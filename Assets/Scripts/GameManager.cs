@@ -6,7 +6,8 @@ using UnityEngine.Video;
 //using UnityStandardAssets.CrossPlatformInput; // include so we can use Cross-Platform Input (for mobile devices - i.e. Android, iOS, etc. - and for Standalone devices - Windows, Mac).
 using UnityEngine.SceneManagement;
 /////using UnityEngine.Profiling;    // Profiler: COMENTAR CUANDO YA NO SE USE:
-// Karaoke
+//
+// Karaoke:
 //
 using Hammerplay.Utils.Karaoke;
 
