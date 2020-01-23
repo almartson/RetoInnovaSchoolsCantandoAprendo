@@ -1820,7 +1820,6 @@ GameObject:
   - component: {fileID: 831183432}
   - component: {fileID: 831183433}
   - component: {fileID: 831183434}
-  - component: {fileID: 831183436}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1954,24 +1953,6 @@ MonoBehaviour:
   _puedeLimpiarEnEsteEstadoDelJuegoSinAfectarElPerformance: 0
   _miTiempoParaInvocarGCCollect: 0
   _verDebugLogsWarningsErrors: 1
---- !u!114 &831183436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831183430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 590cc8d912b6df34498813a1591cc048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleKey: 96
-  openOnStart: 0
-  shakeToOpen: 1
-  shakeAcceleration: 3
-  restrictLogCount: 0
-  maxLogCount: 1000
 --- !u!1 &928754998
 GameObject:
   m_ObjectHideFlags: 0

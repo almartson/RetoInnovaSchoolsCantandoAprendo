@@ -33,7 +33,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
         // 
         //
-        Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
+        ///Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
 
 
         switch (numeroDePregunta)
@@ -51,7 +51,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 1, Resp. 1: Respuesta equivocada");
+                        ///Debug.Log("Pregunta 1, Resp. 1: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -77,7 +77,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta
                         //
-                        Debug.Log("Pregunta 1, Resp. 2: Respuesta CORRECTA!");
+                        ///Debug.Log("Pregunta 1, Resp. 2: Respuesta CORRECTA!");
 
 
                         break;
@@ -87,7 +87,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 1, Resp. 3: Respuesta equivocada");
+                        ///Debug.Log("Pregunta 1, Resp. 3: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -99,7 +99,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Error del Programador: avisar.
                         //
-                        Debug.Log("Pregunta 1, Resp. ???: Respuesta No Programada!");
+                        ///Debug.Log("Pregunta 1, Resp. ???: Respuesta No Programada!");
 
                         // Accion desde el GameManager
                         //
@@ -122,7 +122,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta
                         //
-                        Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
+                        ///Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
 
                         // Accion desde el GameManager
                         //
@@ -137,7 +137,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
+                        ///Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -150,7 +150,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
+                        ///Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -163,7 +163,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Error del Programador: avisar.
                         //
-                        Debug.Log("Pregunta 2, Resp. ???: Respuesta No Programada!");
+                        ///Debug.Log("Pregunta 2, Resp. ???: Respuesta No Programada!");
 
                         // Accion desde el GameManager
                         //
@@ -187,7 +187,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 2, Resp. 1: Respuesta equivocada");
+                        ///Debug.Log("Pregunta 2, Resp. 1: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -202,7 +202,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta equivocada
                         //
-                        Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
+                        //////Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
 
                         // Accion desde el GameManager
                         //
@@ -215,7 +215,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Respuesta
                         //
-                        Debug.Log("Pregunta 2, Resp. 3: Respuesta CORRECTA!");
+                        ///Debug.Log("Pregunta 2, Resp. 3: Respuesta CORRECTA!");
 
                         // Accion desde el GameManager
                         //
@@ -228,7 +228,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                         // Error del Programador: avisar.
                         //
-                        Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
+                        ///Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
 
                         // Accion desde el GameManager
                         //
@@ -244,7 +244,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Error del Programador: avisar.
                 //
-                Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
+                ///Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
 
                 break;
 
@@ -262,7 +262,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
         // 
         //
-        Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
+        ///Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
 
         switch (numeroDeImagen)
         {
@@ -271,7 +271,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 1, Resp. 1: Respuesta equivocada");
+               ///Debug.Log("Pregunta 1, Resp. 1: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -297,7 +297,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta
                 //
-                Debug.Log("Pregunta 1, Resp. 2: Respuesta CORRECTA!");
+               ///Debug.Log("Pregunta 1, Resp. 2: Respuesta CORRECTA!");
 
                 break;
 
@@ -306,7 +306,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 1, Resp. 3: Respuesta equivocada");
+               ///Debug.Log("Pregunta 1, Resp. 3: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -319,7 +319,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Error del Programador: avisar.
                 //
-                Debug.Log("Pregunta 1, Resp. ???: Respuesta No Programada!");
+               ///Debug.Log("Pregunta 1, Resp. ???: Respuesta No Programada!");
 
                 break;
 
@@ -337,7 +337,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
         // 
         //
-        Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
+       ///Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
 
 
         switch (numeroDeImagen)
@@ -347,7 +347,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta
                 //
-                Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
+               ///Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
 
                 // Accion desde el GameManager
                 //
@@ -362,7 +362,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
+               ///Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -375,7 +375,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
+               ///Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -388,7 +388,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Error del Programador: avisar.
                 //
-                Debug.Log("Pregunta 2, Resp. ???: Respuesta No Programada!");
+               ///Debug.Log("Pregunta 2, Resp. ???: Respuesta No Programada!");
 
                 break;
 
@@ -407,7 +407,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
         // 
         //
-        Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
+       ///Debug.Log("RespuestasATriviasPreguntas... ojo debe salir otro DEBUG LOG más interno");
 
 
         switch (numeroDeImagen)
@@ -417,7 +417,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
+               ///Debug.Log("Pregunta 2, Resp. 3: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -432,7 +432,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta equivocada
                 //
-                Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
+               ///Debug.Log("Pregunta 2, Resp. 2: Respuesta equivocada");
 
                 // Accion desde el GameManager
                 //
@@ -445,7 +445,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Respuesta
                 //
-                Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
+               ///Debug.Log("Pregunta 2, Resp. 1: Respuesta CORRECTA!");
 
 
                 // Accion desde el GameManager
@@ -459,7 +459,7 @@ public class AccionDeResponderATrivias : MonoBehaviour
 
                 // Error del Programador: avisar.
                 //
-                Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
+               ///Debug.Log("Pregunta 3, Resp. ???: Respuesta No Programada!");
 
                 break;
 

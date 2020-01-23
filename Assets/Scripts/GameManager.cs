@@ -927,31 +927,31 @@ public class GameManager : MonoBehaviour
                         #endregion Configuracion del Juego
 
 
-                        ///INICIO DE:///BORRAR O COMENTAR cuando haga BUILD-DEPLOY FINAL:
-                        //
-                        Debug.Log("GameManager.cs -> Update()\n->\nRESOLUCION DE PANTALLA APLICADA AL FINAL: Screen.currentResolution = " + Screen.currentResolution);
+                        /////INICIO DE:///BORRAR O COMENTAR cuando haga BUILD-DEPLOY FINAL:
+                        ////
+                        //Debug.Log("GameManager.cs -> Update()\n->\nRESOLUCION DE PANTALLA APLICADA AL FINAL: Screen.currentResolution = " + Screen.currentResolution);
 
-                        // Resoluciones existentes:
-                        //
-                        int longRes = Screen.resolutions.Length;
-                        //
-                        Debug.Log("GameManager.cs -> RESOLUCIONES DISPONIBLES para este OS:\n->\n");
-                        //
-                        for (int i = 0; i < longRes; i++)
-                        {
+                        //// Resoluciones existentes:
+                        ////
+                        //int longRes = Screen.resolutions.Length;
+                        ////
+                        //Debug.Log("GameManager.cs -> RESOLUCIONES DISPONIBLES para este OS:\n->\n");
+                        ////
+                        //for (int i = 0; i < longRes; i++)
+                        //{
 
-                            Debug.Log(i + " )-- " + Screen.resolutions[ i ].ToString() );
+                        //    ///Debug.Log(i + " )-- " + Screen.resolutions[ i ].ToString() );
 
-                        }//End for
+                        //}//End for
 
-                        //////BORRAR DESPUES O COMENTARRRRR:::::::://///////////////
-                        //
-                        Debug.Log("QUALITY SETTINGS FIJADOS (mi variable): this._miCalidadDeQualitySettings = " + this._miCalidadDeQualitySettings);
-                        Debug.Log("QUALITY SETTINGS FIJADOS: QualitySettings.GetQualityLevel() = " + QualitySettings.GetQualityLevel());
-                        Debug.Log("QUALITY SETTINGS FIJADOS: QualitySettings.names[ QualitySettings.GetQualityLevel() ] = " + QualitySettings.names[QualitySettings.GetQualityLevel()]);
-                        Debug.Log("FPS fijados: = " + Application.targetFrameRate);
-                        //
-                        ///FIN DE:///BORRAR DESPUES O COMENTARRRRR:::::::://///////////////
+                        ////////BORRAR DESPUES O COMENTARRRRR:::::::://///////////////
+                        ////
+                        //Debug.Log("QUALITY SETTINGS FIJADOS (mi variable): this._miCalidadDeQualitySettings = " + this._miCalidadDeQualitySettings);
+                        //Debug.Log("QUALITY SETTINGS FIJADOS: QualitySettings.GetQualityLevel() = " + QualitySettings.GetQualityLevel());
+                        //Debug.Log("QUALITY SETTINGS FIJADOS: QualitySettings.names[ QualitySettings.GetQualityLevel() ] = " + QualitySettings.names[QualitySettings.GetQualityLevel()]);
+                        //Debug.Log("FPS fijados: = " + Application.targetFrameRate);
+                        ////
+                        /////FIN DE:///BORRAR DESPUES O COMENTARRRRR:::::::://///////////////
 
 
                         // Fin de esta ETAPA INICIALIZATORIA:

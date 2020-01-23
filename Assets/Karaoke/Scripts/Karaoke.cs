@@ -85,7 +85,7 @@ namespace Hammerplay.Utils.Karaoke
                 {
                     // No solution, display error:
                     //
-                    Debug.LogWarning("Can't find Text component in Gameobject, Karaoke needs Text Component.\nIt will use 'Mode Without Text Display (just internal string variable write)'");
+                   ///Debug.LogWarning("Can't find Text component in Gameobject, Karaoke needs Text Component.\nIt will use 'Mode Without Text Display (just internal string variable write)'");
 
                     // Original Code: this.enabled = false;
                 }                
@@ -173,7 +173,7 @@ namespace Hammerplay.Utils.Karaoke
                     ////
                     //if (index >= 0)       // int index = str.IndexOf(@"\");
                     //{
-                    //    Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
+                    //   ///Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
 
                     //}//End if
 
@@ -232,7 +232,7 @@ namespace Hammerplay.Utils.Karaoke
                     ////
                     //if (index >= 0)       // int index = str.IndexOf(@"\");
                     //{
-                    //    Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
+                    //   ///Debug.LogWarning("\n\n" + _FRASE_1_TRIVIA_KARAOKE);
 
                     //}//End if
 
@@ -273,7 +273,7 @@ namespace Hammerplay.Utils.Karaoke
                     if (lineaDeTextoKaraoke.IndexOf(@_FRASE_1_TRIVIA_KARAOKE) > 0)
                     {
 
-                        Debug.LogWarning(_FRASE_1_TRIVIA_KARAOKE);
+                        ///Debug.LogWarning(_FRASE_1_TRIVIA_KARAOKE);
                         //
                         // Setea la bandera de ENCONTRADO
                         //
@@ -298,7 +298,7 @@ namespace Hammerplay.Utils.Karaoke
                     if (lineaDeTextoKaraoke.IndexOf(@_FRASE_2_TRIVIA_KARAOKE) > 0)
                     {
 
-                        Debug.LogWarning(_FRASE_2_TRIVIA_KARAOKE);
+                        ///Debug.LogWarning(_FRASE_2_TRIVIA_KARAOKE);
                         //
                         // Setea la bandera de ENCONTRADO
                         //
@@ -324,7 +324,7 @@ namespace Hammerplay.Utils.Karaoke
                     if (lineaDeTextoKaraoke.IndexOf(@_FRASE_3_TRIVIA_KARAOKE) > 0)
                     {
 
-                        Debug.LogWarning(_FRASE_3_TRIVIA_KARAOKE);
+                        ///Debug.LogWarning(_FRASE_3_TRIVIA_KARAOKE);
                         //
                         // Setea la bandera de ENCONTRADO
                         //
