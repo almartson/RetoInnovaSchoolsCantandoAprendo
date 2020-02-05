@@ -27,8 +27,7 @@ Durante la reproducción de cada canción aparecerán dibujos alusivos a la fras
 
 - Tienes 1 semana para trabajar en el reto.
 
-#### - El 23 de enero a las 9am necesitamos que envíes 1 solo link de
-github que contenga:
+#### - El 23 de enero a las 9am necesitamos que envíes 1 solo link de github que contenga:
 
 ## - Tu proyecto en Unity
 ## - 1 video de máximo 2 minutos explicando el proceso y tu lógica de trabajo.
