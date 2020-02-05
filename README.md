@@ -32,3 +32,34 @@ Durante la reproducción de cada canción aparecerán dibujos alusivos a la fras
 ## - Tu proyecto en Unity
 ## - 1 video de máximo 2 minutos explicando el proceso y tu lógica de trabajo.
 ## - 1 video de máximo 1 minuto explicando cómo funciona el juego.
+
+### Notas:
+
+1- Los videos mencionados arriba fueron retirados del ambiente público de GitHub para proteger la Imagen y Privacidad del Autor y Desarrollador del Proyecto.
+
+2- Si hay alguien que, (con fines educativos o con una posible propuesta laboral), realmente necesite tener acceso total al material personal contenido en los dos videos mencionados arriba: bastará con, (por favor), enviarme un e-mail a esta Cuenta de GitHub. Ello permitiría realizar una evaluación a profundidad de las etapas de: Análisis, Diseño y Desarrollo por las que pasó el 'Proyecto' y el 'Software' (que no son estrictamente hablando el mismo concepto, cabe destacar).
+
+
+*****************************************************
+MIT License
+
+Copyright (c) 2020 AlMartson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*****************************************************
